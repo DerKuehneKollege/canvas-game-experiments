@@ -12,20 +12,28 @@ module.exports = {
         new CopyPlugin({
             patterns: [
                 { from: "./src/assets", to: "assets" },
+                { from: "./src/favicon.ico", to: "favicon.ico"}
             ],
         }),
     ],
     module: {
         rules: [
+            // CSS
             {
                 test: /\.css$/i,
                 use: ['style-loader', 'css-loader'],
             },
+            // TypeScript Code
             {
-                test: /\.tsx?$/,
+                test: /\.tsx?$/i,
                 use: 'ts-loader',
                 exclude: /node_modules/,
-            }
+            },
+            // Fonts
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                type: 'asset/resource',
+            },
         ],
     },
     resolve: {

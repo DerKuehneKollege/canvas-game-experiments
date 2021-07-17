@@ -1,9 +1,10 @@
+import 'normalize.css';
 import '../css/style.css';
 import {BaseGame} from "./base-game";
 import {PaintGame} from "./games/paint-game";
 import {RandomWalkerGame} from "./games/random-walker-game";
 import {ParticleGame} from "./games/particle-game";
-import {FloaterGame} from "./games/floater-game";
+import {RandomWalkerFloaterGame} from "./games/random-walker-floater-game";
 
 class Main {
 
@@ -11,7 +12,7 @@ class Main {
         // const game = new ParticleGame();
         // const game = new PaintGame();
         // const game = new RandomWalkerGame();
-        const game = new FloaterGame();
+        const game = new RandomWalkerFloaterGame();
 
         game.run();
 

@@ -55,7 +55,7 @@ export class ParticleGame extends BaseGame {
     private async loadAudio() {
         // @ts-ignore
 
-        const response = await fetch('assets/click.wav');
+        const response = await fetch('assets/ball.mp3');
         const arrayBuffer = await response.arrayBuffer();
         return await this.audioCtx.decodeAudioData(arrayBuffer);
     }

@@ -1,5 +1,17 @@
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('../fonts/JetBrainsMono-Regular.woff2') format('woff2'),
+    url('../fonts/JetBrainsMono-Regular.woff2') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
 body {
     background: white;
+}
+
+*:focus {
+    outline: none;
 }
 
 .game-canvas {
@@ -10,4 +22,81 @@ body {
     width: 100%;
     height: 100%;
     cursor: crosshair;
+}
+
+.game-ui-overlay {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    background: #000000;
+    opacity: 0.5;
+    z-index: 99;
+    font-family: "JetBrains Mono", "Courier New", monospace;
+}
+
+.game-ui-form {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    grid-gap: 1rem;
+    align-items: center;
+}
+
+.game-ui-form label {
+    grid-column: 1 / 2;
+    text-align: right;
+    display: block;
+    color: white;
+}
+
+.game-ui-form input,
+.game-ui-form button {
+    grid-column: 2 / 3;
+}
+
+.game-ui-input-number {
+    color: white;
+    background: #3d3d3d;
+    border: 2px solid #ccc;
+    padding: 0.25rem 0.5rem;
+}
+
+.game-ui-input-number:hover {
+    border: 2px solid #ff42ff;
+}
+
+.game-ui-input-number:active, .game-ui-input-number:focus {
+    border: 2px solid #ff00ff;
+}
+
+.game-ui-toast-container {
+    position: fixed;
+    left: 50%;
+    bottom: 10%;
+    transform: translateX(-50%);
+    max-width: 80%;
+}
+
+.game-ui-toast-container > * {
+    margin-top: 1rem;
+}
+
+.game-ui-toast {
+    padding: 1rem;
+    border-radius: 5px;
+    max-width: 80%;
+    background: #000000;
+    color: white;
+    opacity: 0;
+    font-family: "JetBrains Mono", "Courier New", monospace;
+    animation: fadeIn 0.2s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 0.5; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 0.5; }
+    to   { opacity: 0; }
 }
