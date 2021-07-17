@@ -1,6 +1,23 @@
 # canvas-game-experiments
 
-Experiments with HTML canvas and webpack
+Some experiments with HTML canvas and webpack.
+
+## How to run
+
+To run this web application NodeJS is required.
+
+Enter the following command while being the checkout folder to build the project:
+
+    npm install
+    npm run build
+
+Enter the following command on terminal to start:
+
+    npm start
+
+The application should then be accessible via web browser by the url http://localhost:8080 
+
+
 
 ## Third party assets
 
