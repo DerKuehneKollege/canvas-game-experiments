@@ -5,6 +5,7 @@ import {PaintGame} from "./games/paint-game";
 import {RandomWalkerGame} from "./games/random-walker-game";
 import {ParticleGame} from "./games/particle-game";
 import {RandomWalkerFloaterGame} from "./games/random-walker-floater-game";
+import {LineDiagram} from "./games/line-diagram";
 
 class Main {
 
@@ -12,11 +13,12 @@ class Main {
         // const game = new ParticleGame();
         // const game = new PaintGame();
         // const game = new RandomWalkerGame();
-        const game = new RandomWalkerFloaterGame();
+        // const game = new RandomWalkerFloaterGame();
+        const game = new LineDiagram();
 
         game.run();
-
     }
+
 }
 
 Main.start();

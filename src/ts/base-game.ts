@@ -123,7 +123,7 @@ export abstract class BaseGame {
 
     private renderFpsCounter() {
         this.ctx.textAlign = 'right';
-        this.ctx.strokeStyle = '#fff';
+        this.ctx.strokeStyle = '#000';
         this.ctx.font = '16px monospace';
         this.ctx.strokeText(`${this.lastFps} FPS`, this.right - 10, 16);
     }

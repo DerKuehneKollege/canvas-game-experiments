@@ -20,6 +20,8 @@ export class RandomWalkerFloaterGame extends BaseGame {
     private deltaTx = 0.005;
     private deltaTy = 0.005;
 
+    private uiDiv!: HTMLDivElement;
+
     constructor() {
         super();
 
@@ -35,6 +37,16 @@ export class RandomWalkerFloaterGame extends BaseGame {
         this.noise2D = makeNoise2D(Date.now());
 
         this.createUi();
+
+        window.addEventListener('keydown', (ev) => {
+            console.log(ev);
+
+            if (ev.key === 'Escape') {
+                this.uiDiv.style.display = (this.uiDiv.style.display !== 'none')
+                    ? 'none'
+                    : 'block';
+            }
+        });
     }
 
     protected init(): void {
@@ -62,9 +74,10 @@ export class RandomWalkerFloaterGame extends BaseGame {
 
     private createUi() {
         // UI
-        const div = document.createElement('div');
-        div.classList.add('game-ui-overlay');
-        div.style.padding = '1rem';
+        const uiDiv = document.createElement('div');
+        uiDiv.classList.add('game-ui-overlay');
+        uiDiv.style.padding = '1rem';
+        uiDiv.style.display = 'none';
 
         const form = document.createElement('form');
         form.classList.add('game-ui-form');
@@ -98,9 +111,11 @@ export class RandomWalkerFloaterGame extends BaseGame {
         form.appendChild(labelTy);
         form.appendChild(inputTy);
 
-        div.appendChild(form);
+        uiDiv.appendChild(form);
 
-        document.body.appendChild(div);
+        document.body.appendChild(uiDiv);
+
+        this.uiDiv = uiDiv;
     }
 
 }
